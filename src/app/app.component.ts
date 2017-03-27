@@ -16,17 +16,21 @@ export class AppComponent {
     //
   }
 
-  addTodo() {
-    // Add new then reset variable to new object
-    this.todoDataService.addTodo(this.newTodo);
-    this.newTodo = new Todo();
+  // addTodo() {
+  //   // Add new then reset variable to new object
+  //   this.todoDataService.addTodo(this.newTodo);
+  //   this.newTodo = new Todo();
+  // }
+
+  onAddTodo(todo: Todo) {
+    this.todoDataService.addTodo(todo);
   }
 
-  toggleTodoComplete(todo) {
+  onToggleTodoComplete(todo) {
     this.todoDataService.toggleTodoComplete(todo);
   }
 
-  removeTodo(todo) {
+  onRemoveTodo(todo) {
     this.todoDataService.deleteTodoById(todo.id);
   }
 
